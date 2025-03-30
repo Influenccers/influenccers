@@ -6482,10 +6482,19 @@ ul.list-double::after {
 	opacity: 0.3;
 }
 
-ul.list-double li:first-child::after, ul.list-double li:hover::after {
-	transform: scale(1.5);
-	background: var(--color-primary);
-	color: var(--white);
+/* Hover effect for list items (show checkmark + transform) */
+ul.list-double li:hover::after {
+    content: "\f00c"; /* Show checkmark only on hover */
+    transform: scale(1.5);
+    background: var(--color-primary);
+    color: var(--white);
+}
+
+/* Optional: If you want the parent UL to also change on hover */
+ul.list-double:hover {
+    /* Example: Change the line color on hover */
+    border-left-color: var(--color-primary);
+    opacity: 1;
 }
 
 ul.list-double {
